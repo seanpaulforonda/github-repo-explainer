@@ -31,13 +31,13 @@ Install the i-have-adhd skill/plugin from https://github.com/ayghri/i-have-adhd,
 Copy/paste into your CLI prompt:
 
 ```text
-Install the github-repo-explainer skill from https://github.com/itszshinnn/github-repo-explainer
+Install the github-repo-explainer skill from https://github.com/seanpaulforonda/github-repo-explainer
 ```
 
 ### Skills CLI
 
 ```bash
-npx skills add itszshinnn/github-repo-explainer --skill github-repo-explainer
+npx skills add seanpaulforonda/github-repo-explainer --skill github-repo-explainer
 ```
 
 ### Manual Installation
@@ -46,11 +46,11 @@ Clone directly into your agent skills path:
 
 * Claude Code:
   ```bash
-  git clone https://github.com/itszshinnn/github-repo-explainer.git ~/.claude/skills/github-repo-explainer
+  git clone https://github.com/seanpaulforonda/github-repo-explainer.git ~/.claude/skills/github-repo-explainer
   ```
 * Codex:
   ```bash
-  git clone https://github.com/itszshinnn/github-repo-explainer.git ~/.agents/skills/github-repo-explainer
+  git clone https://github.com/seanpaulforonda/github-repo-explainer.git ~/.agents/skills/github-repo-explainer
   ```
 
 ### Usage
@@ -100,4 +100,4 @@ Each explanation delivers ten concise sections:
 
 ## License
 
-[MIT](LICENSE). Copyright (c) 2026 itszshinnn.
+[MIT](LICENSE). Copyright (c) 2026 seanpaulforonda.

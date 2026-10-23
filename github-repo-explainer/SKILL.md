@@ -50,4 +50,4 @@ Always structure the explanation using these sections:
 
 ## License
 
-MIT License. Copyright (c) 2026 itszshinnn.
+MIT License. Copyright (c) 2026 seanpaulforonda.
