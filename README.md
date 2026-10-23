@@ -100,4 +100,4 @@ Each explanation delivers ten concise sections:
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE). Copyright (c) 2026 itszshinnn.
