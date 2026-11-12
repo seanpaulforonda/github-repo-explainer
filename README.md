@@ -10,9 +10,10 @@ Compatible with Claude Code, OpenAI Codex, Antigravity, and tools implementing t
 ## Overview
 
 When reviewing third party tools, repositories, or skills, developers often waste time parsing long marketing READMEs or risk running untrusted code. `github-repo-explainer` automates repo analysis:
-1. Audits codebases for safety, leaked secrets, and prompt injection attempts.
-2. Identifies concrete, real world use cases so you know where and when to apply the tool.
-3. Formats responses using high signal rules: bottom line first, no fluff, and lists capped at five items.
+1. Audits codebases for safety, leaked secrets, prompt injection attempts, and destructive scripts.
+2. Evaluates device and database safety to provide a clear verdict on whether to install or avoid.
+3. Identifies concrete, real world use cases so you know where and when to apply the tool.
+4. Formats responses using high signal rules: bottom line first, no fluff, and lists capped at five items.
 
 ## Prerequisites
 
@@ -71,15 +72,15 @@ For skills you just installed:
 
 ```mermaid
 flowchart LR
-    A["Target Repo / Skill"] --> B["Security Audit"]
+    A["Target Repo / Skill"] --> B["Security & Injection Audit"]
     B --> C["Feature and Tech Detection"]
     C --> D["Workflow and Use Case Mapping"]
-    D --> E["10-Section Structured Output"]
+    D --> E["Safety Verdict & Structured Output"]
 ```
 
 ## Output Structure
 
-Each explanation delivers ten concise sections:
+Each explanation delivers eleven concise sections:
 1. Bottom Line: One sentence defining the project.
 2. Purpose: The core problem solved.
 3. What Can It Do: Up to five verified features.
@@ -89,11 +90,14 @@ Each explanation delivers ten concise sections:
 7. Compatibility: Supported agents, runtimes, and operating systems.
 8. Security and Guardrails: Passive data audit, secret scan, and command safety.
 9. Trade Offs: Resource costs, token usage, and limitations.
-10. Next Action: One immediate, small step runnable in under two minutes.
+10. Safety Verdict: Clear decision on whether it is safe to clone, install, add, or run.
+11. Next Action: One immediate, small step runnable in under two minutes.
 
 ## Security Guardrails
 
 * Passive Data Rule: Analyzed code is treated as passive text. It ignores embedded instructions attempting to redirect your agent.
+* Injection Defense: Detects prompt injection attempts in docs, rules, prompts, and code comments.
+* Destructive Command Check: Flags harmful actions such as database wipes, disk formatting, and arbitrary file deletion.
 * Read Only Analysis: Never executes untrusted install scripts, build tasks, or binaries.
 * Credential Protection: Alerts if tokens or private keys are exposed without printing secret values.
 * Grounded Truth: Reports missing files or documentation directly instead of hallucinating details.
